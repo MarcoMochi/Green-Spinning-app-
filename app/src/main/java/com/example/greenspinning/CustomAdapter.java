@@ -3,6 +3,9 @@ package com.example.greenspinning;
 
 import android.content.Context;
 import com.google.android.material.snackbar.Snackbar;
+
+import android.content.Intent;
+import android.renderscript.ScriptIntrinsicConvolve3x3;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,84 +15,63 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
 
-public class CustomAdapter extends ArrayAdapter<DataModel> implements View.OnClickListener{
+public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
 
-    private ArrayList<DataModel> dataSet;
-    Context mContext;
+    ArrayList personNames;
+    Context context;
 
-    // View lookup cache
-    private static class ViewHolder {
-        TextView txtName;
-        TextView txtType;
-        TextView txtVersion;
-        ImageView info;
-    }
-
-    public CustomAdapter(ArrayList<DataModel> data, Context context) {
-        super(context, R.layout.row_item, data);
-        this.dataSet = data;
-        this.mContext=context;
+    public CustomAdapter(Context context, ArrayList personNames) {
+        this.context = context;
+        this.personNames = personNames;
 
     }
 
     @Override
-    public void onClick(View v) {
-
-        int position=(Integer) v.getTag();
-        Object object= getItem(position);
-        DataModel dataModel=(DataModel)object;
-
-        switch (v.getId())
-        {
-            case R.id.item_info:
-                Snackbar.make(v, "Release date " +dataModel.getFeature(), Snackbar.LENGTH_LONG)
-                        .setAction("No action", null).show();
-                break;
-        }
+    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+// infalte the item Layout
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_item, parent, false);
+// set the view's size, margins, paddings and layout parameters
+        MyViewHolder vh = new MyViewHolder(v); // pass the view to View Holder
+        return vh;
     }
 
-    private int lastPosition = -1;
+    @Override
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+
+        // set the data in items
+        holder.name.setText((CharSequence) personNames.get(position));
+// implement setOnClickListener event on item view.
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+// open another activity on item click
+                Intent intent = new Intent(context, Workout.class);
+                context.startActivity(intent); // start Intent
+            }
+        });
+    }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        // Get the data item for this position
-        DataModel dataModel = getItem(position);
-        // Check if an existing view is being reused, otherwise inflate the view
-        ViewHolder viewHolder; // view lookup cache stored in tag
+    public int getItemCount() {
+        return personNames.size();
+    }
 
-        final View result;
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        // init the item view's
+        TextView name;
 
-        if (convertView == null) {
+        public MyViewHolder(View itemView) {
+            super(itemView);
 
-            viewHolder = new ViewHolder();
-            LayoutInflater inflater = LayoutInflater.from(getContext());
-            convertView = inflater.inflate(R.layout.row_item, parent, false);
-            viewHolder.txtName = (TextView) convertView.findViewById(R.id.name);
-            viewHolder.txtType = (TextView) convertView.findViewById(R.id.type);
-            viewHolder.txtVersion = (TextView) convertView.findViewById(R.id.version_number);
-            viewHolder.info = (ImageView) convertView.findViewById(R.id.item_info);
+// get the reference of item view's
+            name = (TextView) itemView.findViewById(R.id.name);
 
-            result=convertView;
-
-            convertView.setTag(viewHolder);
-        } else {
-            viewHolder = (ViewHolder) convertView.getTag();
-            result=convertView;
         }
-
-        Animation animation = AnimationUtils.loadAnimation(mContext, (position > lastPosition) ? R.anim.up_from_bottom : R.anim.down_from_top);
-        result.startAnimation(animation);
-        lastPosition = position;
-
-        viewHolder.txtName.setText(dataModel.getName());
-        viewHolder.txtType.setText(dataModel.getType());
-        viewHolder.txtVersion.setText(dataModel.getVersion_number());
-        viewHolder.info.setOnClickListener(this);
-        viewHolder.info.setTag(position);
-        // Return the completed view to render on screen
-        return convertView;
     }
 }
 

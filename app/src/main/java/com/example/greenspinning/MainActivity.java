@@ -13,11 +13,15 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.Menu;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -25,7 +29,7 @@ public class MainActivity extends AppCompatActivity
     ArrayList<DataModel> dataModels;
     ListView listView;
     private static CustomAdapter adapter;
-
+    ArrayList personNames = new ArrayList<>(Arrays.asList("Person 1", "Person 2", "Person 3", "Person 4", "Person 5", "Person 6", "Person 7","Person 8", "Person 9", "Person 10", "Person 11", "Person 12", "Person 13", "Person 14"));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,39 +46,11 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
-        listView=(ListView)findViewById(R.id.list);
-
-        dataModels= new ArrayList<>();
-
-        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
-        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
-        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
-        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
-        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
-        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
-        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
-        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
-        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
-        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
-        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
-        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
-        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
-        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
-
-        adapter= new CustomAdapter(dataModels,getApplicationContext());
-
-        listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                DataModel dataModel= dataModels.get(position);
-
-                Snackbar.make(view, dataModel.getName()+"\n"+dataModel.getType()+" API: "+dataModel.getVersion_number(), Snackbar.LENGTH_LONG)
-                        .setAction("No action", null).show();
-            }
-        });
-
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.list);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(linearLayoutManager);
+        CustomAdapter customAdapter = new CustomAdapter(MainActivity.this, personNames);
+        recyclerView.setAdapter(customAdapter);
 
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
