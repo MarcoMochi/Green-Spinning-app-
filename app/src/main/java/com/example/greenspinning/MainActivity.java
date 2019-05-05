@@ -14,9 +14,18 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.AdapterView;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    ArrayList<DataModel> dataModels;
+    ListView listView;
+    private static CustomAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +33,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -31,6 +41,40 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        listView=(ListView)findViewById(R.id.list);
+
+        dataModels= new ArrayList<>();
+
+        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
+        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
+        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
+        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
+        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
+        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
+        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
+        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
+        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
+        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
+        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
+        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
+        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
+        dataModels.add(new DataModel("Workout", "Spinning class", "1h","September 23, 2008"));
+
+        adapter= new CustomAdapter(dataModels,getApplicationContext());
+
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                DataModel dataModel= dataModels.get(position);
+
+                Snackbar.make(view, dataModel.getName()+"\n"+dataModel.getType()+" API: "+dataModel.getVersion_number(), Snackbar.LENGTH_LONG)
+                        .setAction("No action", null).show();
+            }
+        });
+
 
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
@@ -93,3 +137,6 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 }
+
+
+
