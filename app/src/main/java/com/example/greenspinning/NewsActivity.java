@@ -51,8 +51,8 @@ public class NewsActivity extends AppCompatActivity implements NavigationView.On
 
     private void prepareNews() {
         int[] covers = new int[]{
-                R.drawable.album1,
-                R.drawable.album2};
+                R.drawable.photo,
+                R.drawable.photo2};
 
             News a = new News("Green energy", "Important news", covers[0]);
             newsList.add(a);
