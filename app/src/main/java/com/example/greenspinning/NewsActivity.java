@@ -51,8 +51,8 @@ public class NewsActivity extends AppCompatActivity implements NavigationView.On
 
     private void prepareNews() {
         int[] covers = new int[]{
-                R.drawable.album1,
-                R.drawable.album2};
+                R.drawable.photo1,
+                R.drawable.photo2};
 
             News a = new News("Green energy", "Important news", covers[0]);
             newsList.add(a);
@@ -67,11 +67,14 @@ public class NewsActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(NewsActivity.this, MainActivity.class);
-        intent.putExtra("EXTRA_SESSION_ID", "news");
-        startActivity(intent);
-        finish();
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

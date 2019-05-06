@@ -54,13 +54,9 @@ public class MainActivity extends AppCompatActivity
         recyclerView.setLayoutManager(linearLayoutManager);
         CustomAdapter customAdapter = new CustomAdapter(MainActivity.this, personNames);
         recyclerView.setAdapter(customAdapter);
-        String sessionId = getIntent().getStringExtra("EXTRA_SESSION_ID");
 
-        if (sessionId != ("news")) {
-            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
-            finish();
-        }
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(intent);
     }
 
     @Override
