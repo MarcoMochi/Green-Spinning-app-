@@ -1,9 +1,12 @@
 package com.example.greenspinning;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
+
+import android.util.Log;
 import android.view.View;
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -51,9 +54,13 @@ public class MainActivity extends AppCompatActivity
         recyclerView.setLayoutManager(linearLayoutManager);
         CustomAdapter customAdapter = new CustomAdapter(MainActivity.this, personNames);
         recyclerView.setAdapter(customAdapter);
+        String sessionId = getIntent().getStringExtra("EXTRA_SESSION_ID");
 
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
+        if (sessionId != ("news")) {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+            finish();
+        }
     }
 
     @Override
@@ -80,6 +87,7 @@ public class MainActivity extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+        Log.d("TAG", String.valueOf(id));
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
@@ -88,18 +96,20 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        Log.d("TAG", String.valueOf(id));
         if (id == R.id.nav_home) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_profile) {
 
-        } else if (id == R.id.nav_slideshow) {
-
+        } else if (id == R.id.nav_info) {
+            Intent intent = new Intent(MainActivity.this, NewsActivity.class);
+            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+            finish();
         } else if (id == R.id.nav_tools) {
 
         } else if (id == R.id.nav_share) {
