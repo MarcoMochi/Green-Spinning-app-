@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class NewsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class NewsActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private NewsAdapter adapter;
@@ -31,12 +31,6 @@ public class NewsActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
-
-
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(NewsActivity.this);
-
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.news);
         newsList = new ArrayList<>();
@@ -51,9 +45,9 @@ public class NewsActivity extends AppCompatActivity implements NavigationView.On
 
     private void prepareNews() {
         int[] covers = new int[]{
-                R.drawable.photo1,
-                R.drawable.photo2,
-                R.drawable.album3};
+                R.drawable.image1,
+                R.drawable.image2,
+                R.drawable.image3};
 
             News a = new News("Green energy", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat turpis eu purus sodales suscipit. Sed sit amet pulvinar est, id euismod nulla", covers[0]);
             newsList.add(a);
@@ -77,53 +71,6 @@ public class NewsActivity extends AppCompatActivity implements NavigationView.On
         } else {
             super.onBackPressed();
         }
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_home) {
-            Intent intent = new Intent(NewsActivity.this, MainActivity.class);
-            startActivity(intent);
-            finish();
-        } else if (id == R.id.nav_profile) {
-
-        } else if (id == R.id.nav_info) {
-        } else if (id == R.id.nav_tools) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }
-
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
     }
 
 }

@@ -15,4 +15,6 @@
     <string name="menu_send">Send</string>
     <string name="action_share">share</string>
     <string name="action_explore">read</string>
+    <string name="text_profile">profile</string>
+    <string name="text_workouts">workouts</string>
 </resources>
