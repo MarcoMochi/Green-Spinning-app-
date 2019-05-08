@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity
     ArrayList<DataModel> dataModels;
     ListView listView;
     private static CustomAdapter adapter;
-    ArrayList personNames = new ArrayList<>(Arrays.asList("Person 1", "Person 2", "Person 3", "Person 4", "Person 5", "Person 6", "Person 7","Person 8", "Person 9", "Person 10", "Person 11", "Person 12", "Person 13", "Person 14"));
+    ArrayList personNames = new ArrayList<>(Arrays.asList("03/06/19", "05/06/19", "07/06/19", "10/06/19", "12/06/19", "14/06/19", "17/06/19","19/06/19", "21/06/19", "24/06/19", "26/06/19", "28/06/19", "01/06/19", "03/06/19"));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

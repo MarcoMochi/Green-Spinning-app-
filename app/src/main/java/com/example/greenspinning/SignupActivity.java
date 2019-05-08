@@ -181,4 +181,11 @@ public class SignupActivity extends AppCompatActivity {
 
         return valid;
     }
+    
+        public void onBackPressed() {
+        Intent exitIntent = new Intent(Intent.ACTION_MAIN);
+        exitIntent.addCategory(Intent.CATEGORY_HOME);
+        exitIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+    }
 }

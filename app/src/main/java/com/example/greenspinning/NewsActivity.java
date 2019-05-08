@@ -75,13 +75,13 @@ public class NewsActivity extends AppCompatActivity {
                 R.drawable.image2,
                 R.drawable.image3};
 
-            News a = new News("Green energy", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat turpis eu purus sodales suscipit. Sed sit amet pulvinar est, id euismod nulla", covers[0]);
+            News a = new News("How Green is 'Green' Energy?", "While these efforts are commendable, much of the development of green energy is having large impacts on the ...", covers[0]);
             newsList.add(a);
 
-            a = new News("World news", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat turpis eu purus sodales suscipit. Sed sit amet pulvinar est, id euismod nulla", covers[1]);
+            a = new News("From Oil to Solar: Saudi Arabia\n", "Life in Saudi Arabia has long been defined by the oil that flows from the kingdom. Over decades, the vast wealth it pumped ...", covers[1]);
             newsList.add(a);
 
-            a = new News("World news", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat turpis eu purus sodales suscipit. Sed sit amet pulvinar est, id euismod nulla", covers[2]);
+            a = new News("Simple Rules for Healthy Eating", "There's a lot of advice out there about what kinds of food you should be avoiding. Here's a more positive ...", covers[2]);
             newsList.add(a);
 
 

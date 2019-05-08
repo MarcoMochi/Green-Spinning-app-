@@ -98,8 +98,10 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        // disable going back to the MainActivity
-        moveTaskToBack(true);
+        Intent exitIntent = new Intent(Intent.ACTION_MAIN);
+        exitIntent.addCategory(Intent.CATEGORY_HOME);
+        exitIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(exitIntent);
     }
 
     public void onLoginSuccess() {
