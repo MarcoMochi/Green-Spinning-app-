@@ -1,5 +1,6 @@
 package com.example.greenspinning;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -16,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -40,7 +42,31 @@ public class NewsActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setAdapter(adapter);
 
+
         prepareNews();
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.action_favorites:
+
+                            case R.id.action_schedules:
+                                Intent i = new Intent(NewsActivity.this, MainActivity.class);
+                                startActivity(i);
+                                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                                break;
+                            case R.id.action_music:
+                                Intent j = new Intent(NewsActivity.this, NewsActivity.class);
+                                startActivity(j);
+                                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                                break;
+                        }
+                        return true;
+                    }
+                });
        }
 
     private void prepareNews() {
