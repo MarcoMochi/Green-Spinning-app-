@@ -18,10 +18,6 @@ import butterknife.BindView;
 public class SignupActivity extends AppCompatActivity {
     private static final String TAG = "SignupActivity";
 
-    private SeekBar seekbar;
-    private TextView progressTextView;
-
-
     @BindView(R.id.input_name) EditText _nameText;
     @BindView(R.id.input_address) EditText _addressText;
     @BindView(R.id.input_email) EditText _emailText;
@@ -35,11 +31,7 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         ButterKnife.bind(this);
-        seekbar = (SeekBar) findViewById(R.id.seekbar);
-        progressTextView = (TextView) findViewById(R.id.progress);
-        seekbar.setMax(3);
-        seekbar.setProgress(2);
-        _signupButton.setOnClickListener(new View.OnClickListener() {
+                _signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 signup();
@@ -56,33 +48,6 @@ public class SignupActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
             }
         });
-
-        // perform seek bar change listener event used for getting the progress value
-        seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            int progressChangedValue = 0;
-
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                progressChangedValue = progress;
-            }
-
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                // TODO Auto-generated method stub
-            }
-
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                if (progressChangedValue == 1){
-                    progressTextView.setText("I'm a beginner");
-                }
-                else if (progressChangedValue == 2){
-                    progressTextView.setText("I'm an intermediate");
-                }
-                else {
-                    progressTextView.setText("I'm an advanced");
-                }
-
-            }
-        });
-
 
     }
 

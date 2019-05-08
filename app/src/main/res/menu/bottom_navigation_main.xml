@@ -3,20 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/action_favorites"
-        android:enabled="true"
         android:icon="@drawable/user"
-        android:title="@string/text_profile"
-        app:showAsAction="ifRoom" />
+        android:title="@string/text_profile"/>
     <item
         android:id="@+id/action_schedules"
-        android:enabled="true"
         android:icon="@drawable/home_icon"
-        android:title="@string/text_workouts"
-        app:showAsAction="ifRoom" />
+        android:title="@string/text_workouts"/>
     <item
         android:id="@+id/action_music"
-        android:enabled="true"
         android:icon="@drawable/news_icon"
-        android:title="@string/News"
-        app:showAsAction="ifRoom" />
+        android:title="@string/News"/>
 </menu>
