@@ -1,29 +1,27 @@
 package com.example.greenspinning;
 
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.snackbar.Snackbar;
 
 import android.util.Log;
-import android.view.View;
 
 import androidx.annotation.NonNull;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.view.GravityCompat;
-import androidx.appcompat.app.ActionBarDrawerToggle;
+
 import android.view.MenuItem;
-import com.google.android.material.navigation.NavigationView;
+
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -39,48 +37,61 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.getMenu().getItem(1).setChecked(true);
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        Fragment fragment;
                         switch (item.getItemId()) {
-                            case R.id.action_favorites:
-
-                            case R.id.action_schedules:
-
-                            case R.id.action_music:
-                                Intent i = new Intent(MainActivity.this, NewsActivity.class);
-                                startActivity(i);
-                                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-                                break;
+                            case R.id.action_profile:
+                                fragment = new ProfileFragment();
+                                loadFragment(fragment);
+                                return true;
+                            case R.id.action_home:
+                                fragment = new HomeFragment();
+                                loadFragment(fragment);
+                                return true;
+                            case R.id.action_news:
+                                fragment = new NewsFragment();
+                                loadFragment(fragment);
+                                return true;
                         }
-                        return true;
+                        return false;
                     }
                 });
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.list);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(linearLayoutManager);
-        CustomAdapter customAdapter = new CustomAdapter(MainActivity.this, personNames);
-        recyclerView.setAdapter(customAdapter);
+        CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) bottomNavigationView.getLayoutParams();
+        layoutParams.setBehavior(new BottomNavigationBehavior());
 
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(intent);
+
+        loadFragment(new HomeFragment());
     }
 
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
+            private void loadFragment(Fragment fragment) {
+                // load fragment
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
+                transaction.replace(R.id.frame_container, fragment);
+                transaction.addToBackStack("my_fragment");
+                transaction.commit();
+            }
+
+            @Override
+            public void onBackPressed() {
+                if (getFragmentManager().getBackStackEntryCount() > 0) {
+                    getFragmentManager().popBackStack();
+                } else {
+                    super.onBackPressed();
+                }
+            }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

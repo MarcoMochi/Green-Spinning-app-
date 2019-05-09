@@ -17,4 +17,10 @@
     <string name="action_explore">read</string>
     <string name="text_profile">PROFILE</string>
     <string name="text_workouts">HOME</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="profile_tot_watt">total watt produced:</string>
+    <string name="profile_weekly_watt">weekly watt produced:</string>
+    <string name="profile_tot_help">total help received:</string>
+    <string name="profile_weekly_help">weekly help received:</string>
 </resources>

@@ -48,7 +48,7 @@
         <item name="boxStrokeWidth">2dp</item>
     </style>
 
-        <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+    <style name="SplashTheme" parent="AppTheme.NoActionBar">
         <item name="android:windowBackground">@drawable/splash_theme</item>
     </style>
 

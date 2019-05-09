@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_favorites"
+        android:id="@+id/action_profile"
         android:icon="@drawable/user"
         android:title="@string/text_profile"/>
     <item
-        android:id="@+id/action_schedules"
+        android:id="@+id/action_home"
         android:icon="@drawable/home_icon"
         android:title="@string/text_workouts"/>
     <item
-        android:id="@+id/action_music"
+        android:id="@+id/action_news"
         android:icon="@drawable/news_icon"
         android:title="@string/News"/>
 </menu>
