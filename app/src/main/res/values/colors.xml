@@ -15,6 +15,7 @@
     <color name="base">#AAAAAA</color>
     <color name="iron">#CCCCCC</color>
     <color name="white">#FFFFFF</color>
+    <color name="monsoon_transparent">#80777777</color>
 
     <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#ffffff</color>
 </resources>
