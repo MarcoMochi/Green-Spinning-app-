@@ -28,7 +28,7 @@ public class HomeFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    ArrayList personNames = new ArrayList<>(Arrays.asList("03/06/19", "05/06/19", "07/06/19", "10/06/19", "12/06/19", "14/06/19", "17/06/19", "19/06/19", "21/06/19", "24/06/19", "26/06/19", "28/06/19", "01/06/19", "03/06/19"));
+    ArrayList personNames = new ArrayList<>(Arrays.asList("03/07/19", "01/07/19", "28/06/19", "26/06/19", "24/06/19", "21/06/19", "19/06/19", "17/06/19", "14/06/19", "12/06/19", "10/06/19", "07/06/19", "05/06/19", "03/06/19"));
 
     public HomeFragment() {
         // Required empty public constructor
