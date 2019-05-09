@@ -86,7 +86,7 @@ public class NewsFragment extends Fragment {
         a = new News("From Oil to Solar: Saudi Arabia\n", "Life in Saudi Arabia has long been defined by the oil that flows from the kingdom. Over decades, the vast wealth it pumped ...", covers[1]);
         newsList.add(a);
 
-        a = new News("A.I for Energy Efficiency", "The US Energy Information Agency (EIA) defines renewable energy as an energy source that naturally regenerate, such ...", covers[2]);
+        a = new News("Simple Rules for Healthy Eating", "There's a lot of advice out there about what kinds of food you should be avoiding. Here's a more positive ...", covers[2]);
         newsList.add(a);
 
         a = new News("Renewable Energy from Wood Wastes", "Food waste is an untapped energy source which mostly ends up rotting in landfills thereby greenhouse gases ...", covers[3]);
