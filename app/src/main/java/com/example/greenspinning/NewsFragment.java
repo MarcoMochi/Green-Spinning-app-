@@ -69,7 +69,6 @@ public class NewsFragment extends Fragment {
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setAdapter(adapter);
 
-
         prepareNews();
         return view;
     }
@@ -78,7 +77,8 @@ public class NewsFragment extends Fragment {
         int[] covers = new int[]{
                 R.drawable.image1,
                 R.drawable.image2,
-                R.drawable.image3};
+                R.drawable.image3,
+                R.drawable.image4};
 
         News a = new News("How Green is 'Green' Energy?", "While these efforts are commendable, much of the development of green energy is having large impacts on the ...", covers[0]);
         newsList.add(a);
@@ -87,6 +87,9 @@ public class NewsFragment extends Fragment {
         newsList.add(a);
 
         a = new News("Simple Rules for Healthy Eating", "There's a lot of advice out there about what kinds of food you should be avoiding. Here's a more positive ...", covers[2]);
+        newsList.add(a);
+
+        a = new News("Renewable Energy from Wood Wastes", "Food waste is an untapped energy source which mostly ends up rotting in landfills thereby greenhouse gases ...", covers[3]);
         newsList.add(a);
 
 

@@ -1,10 +1,16 @@
 package com.example.greenspinning;
 
+import android.animation.ObjectAnimator;
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -53,12 +59,13 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final MyViewHolder holder, int position) {
 
-        News news = newsList.get(position);
+        final News news = newsList.get(position);
         // set the data in items
         holder.title.setText(news.getTitle());
         holder.subtitle.setText(news.getSubtitle());
+
 // implement setOnClickListener event on item view.
         Glide.with(context).load(news.getThumbnail()).into(holder.thumbnail);
 
@@ -66,10 +73,19 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
             @Override
             public void onClick(View view) {
 // open another activity on item click
-                Intent intent = new Intent(context, Workout.class);
-                context.startActivity(intent); // start Intent
+                //We are passing Bundle to activity, these lines will animate when we laucnh activity
+                Bundle bundle = ActivityOptions.makeSceneTransitionAnimation((Activity) context,
+                        Pair.create(view,"selectedMovie")
+                ).toBundle();
+
+                Intent intent = new Intent(context,DetailsActivity.class);
+                intent.putExtra("title", news.getTitle());
+                intent.putExtra("subtitle", news.getSubtitle());
+                intent.putExtra("thumbnail", news.getThumbnail());
+                context.startActivity(intent,bundle);
             }
         });
+
     }
 
     @Override

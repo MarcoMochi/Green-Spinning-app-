@@ -19,7 +19,15 @@
                 android:layout_height="match_parent"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="0dp"
-                android:scaleType="centerCrop" />
+                android:scaleType="centerCrop"
+                android:transitionName="selectedMovie"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#000000"
+                android:alpha=".4"
+                android:id="@+id/vw_blacklayer" />
 
             <TextView
                 android:id="@+id/title"
