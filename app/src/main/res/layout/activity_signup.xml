@@ -94,11 +94,10 @@
             <com.google.android.material.chip.Chip
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:id="@+id/beginner_chip"
-                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Beginner"
-                app:chipBackgroundColor="@color/bg_chip_state_list_signup"/>
+                app:chipBackgroundColor="@color/bg_chip_state_list"/>
 
             <com.google.android.material.chip.Chip
                 style="@style/Widget.MaterialComponents.Chip.Choice"
@@ -106,7 +105,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Intermediate"
-                app:chipBackgroundColor="@color/bg_chip_state_list_signup"/>
+                app:chipBackgroundColor="@color/bg_chip_state_list"/>
 
             <com.google.android.material.chip.Chip
                 style="@style/Widget.MaterialComponents.Chip.Choice"
@@ -114,8 +113,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Advanced"
-                app:chipBackgroundColor="@color/bg_chip_state_list_signup"/>
-
+                app:chipBackgroundColor="@color/bg_chip_state_list"/>
+            
         </com.google.android.material.chip.ChipGroup>
 
         <!-- Password Label -->
