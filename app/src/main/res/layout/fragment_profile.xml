@@ -146,7 +146,34 @@
 
         />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="370dp"
+        android:layout_marginHorizontal="30dp"
+        />
+
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Teammates you helped (5)"
+        android:layout_marginTop="380dp"
+        android:layout_marginLeft="30dp"
+        android:textColor="@color/monsoon"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="37dp"
+        android:background="@drawable/helped_people"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="30dp"/>
+
+
+    
+    <TextView
+        android:visibility="invisible"
         android:id="@+id/bad_habits1"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
@@ -158,6 +185,7 @@
         android:text="@string/bad_habits1" />
 
     <TextView
+        android:visibility="invisible"
         android:id="@+id/input_bad_habits1"
         android:layout_width="173dp"
         android:layout_height="wrap_content"
