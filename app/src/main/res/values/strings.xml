@@ -23,4 +23,8 @@
     <string name="profile_weekly_watt">weekly watt produced:</string>
     <string name="profile_tot_help">total help received:</string>
     <string name="profile_weekly_help">weekly help received:</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dialog_title">Choose three bad habits</string>
 </resources>
