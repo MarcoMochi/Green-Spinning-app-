@@ -1,18 +1,19 @@
 package com.example.greenspinning;
 
-import android.content.Context;
-import android.net.Uri;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+
+import butterknife.BindView;
 
 
 /**
@@ -23,7 +24,9 @@ import com.google.android.material.snackbar.Snackbar;
  * create an instance of this fragment.
  */
 public class ProfileFragment extends Fragment {
-
+    private static final int TARGET_FRAGMENT_REQUEST_CODE = 1;
+    private static final String BAD_HABITS1 = "message";
+    TextView inputBadHabits1;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -58,16 +61,36 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_profile, container, false);
+        inputBadHabits1 = v.findViewById(R.id.input_bad_habits1);
+
         final FloatingActionButton fab = v.findViewById(R.id.floatingActionButton);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DialogFragment dialogFrag = DialogFragment.newInstance();
+                dialogFrag.setTargetFragment(ProfileFragment.this, TARGET_FRAGMENT_REQUEST_CODE);
                 dialogFrag.setParentFab(fab);
                 dialogFrag.show(getFragmentManager(), dialogFrag.getTag());
             }
         });
         return v;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if( resultCode != Activity.RESULT_OK ) {
+            return;
+        }
+        if( requestCode == TARGET_FRAGMENT_REQUEST_CODE ) {
+            String greeting = data.getStringExtra(BAD_HABITS1);
+            inputBadHabits1.setText(greeting);
+        }
+    }
+
+    public static Intent newIntent(String message) {
+        Intent intent = new Intent();
+        intent.putExtra(BAD_HABITS1, message);
+        return intent;
     }
 
 
