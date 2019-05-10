@@ -8,7 +8,7 @@
     <RelativeLayout
         android:id="@+id/rl_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/colorAccent"
         android:visibility="invisible"
@@ -17,27 +17,22 @@
 
         <Button
             android:id="@+id/btn_close"
-            android:layout_width="250dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/dialog_chip_group"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="79dp"
-            android:layout_marginEnd="81dp"
-            android:layout_marginBottom="41dp"
+
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/buttons"
             android:backgroundTint="@color/colorPrimary"
-            android:padding="8dp"
-            android:text="CLOSE" />
+            android:text="CONFIRM" />
 
 
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/dialog_chip_group"
+            android:layout_below="@+id/btn_close"
             android:layout_width="wrap_content"
-            android:layout_height="172dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="12dp"
-            android:layout_marginBottom="456dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             app:singleSelection="false">
 
             <com.google.android.material.chip.Chip
@@ -92,6 +87,7 @@
 
 
         <LinearLayout
+            android:visibility="invisible"
             android:id="@+id/ll_buttons"
             android:layout_width="match_parent"
             android:layout_height="56dp"
