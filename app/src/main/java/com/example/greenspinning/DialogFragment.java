@@ -33,7 +33,7 @@ public class DialogFragment extends AAH_FabulousFragment {
             }
         });
         //params to set
-        setAnimationDuration(600); //optional; default 500ms
+        setAnimationDuration(300); //optional; default 500ms
         setPeekHeight(250); // optional; default 400dp //optional; to get back result
         setViewgroupStatic(ll_buttons); // optional; layout to stick at bottom on slide
         setViewMain(rl_content); //necessary; main bottomsheet view

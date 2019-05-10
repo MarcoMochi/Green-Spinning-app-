@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorAccent"
+        android:background="@color/colorPrimaryDark"
         android:visibility="invisible"
         tools:ignore="MissingPrefix"
         tools:visibility="visible">
@@ -19,17 +19,17 @@
             android:id="@+id/btn_close"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/buttons"
-            android:backgroundTint="@color/colorPrimary"
+            android:backgroundTint="@color/colorAccent"
+            android:layout_below="@+id/dialog_chip_group"
             android:text="CONFIRM" />
 
 
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/dialog_chip_group"
-            android:layout_below="@+id/btn_close"
+            android:layout_below="@+id/linea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -40,7 +40,8 @@
                 style="@style/Widget.MaterialComponents.Chip.Filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="leave lights on when exit"
+                android:text="Leaving lights on uselessly"
+                android:textColor="@color/colorPrimaryDark"
                 app:chipBackgroundColor="@color/bg_chip_state_list" />
 
             <com.google.android.material.chip.Chip
@@ -48,7 +49,8 @@
                 style="@style/Widget.MaterialComponents.Chip.Filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="use incandescent bulb"
+                android:text="Using incandescent bulb"
+                android:textColor="@color/colorPrimaryDark"
                 app:chipBackgroundColor="@color/bg_chip_state_list" />
 
             <com.google.android.material.chip.Chip
@@ -56,7 +58,8 @@
                 style="@style/Widget.MaterialComponents.Chip.Filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="leave charger plugged in"
+                android:text="Leaving charger plugged in"
+                android:textColor="@color/colorPrimaryDark"
                 app:chipBackgroundColor="@color/bg_chip_state_list" />
 
             <com.google.android.material.chip.Chip
@@ -64,7 +67,8 @@
                 style="@style/Widget.MaterialComponents.Chip.Filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="fall asleep with television on"
+                android:text="Falling asleep with TV on"
+                android:textColor="@color/colorPrimaryDark"
                 app:chipBackgroundColor="@color/bg_chip_state_list" />
 
             <com.google.android.material.chip.Chip
@@ -72,7 +76,8 @@
                 style="@style/Widget.MaterialComponents.Chip.Filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Waste time in fridge"
+                android:text="Leaving PC on all day"
+                android:textColor="@color/colorPrimaryDark"
                 app:chipBackgroundColor="@color/bg_chip_state_list" />
 
             <com.google.android.material.chip.Chip
@@ -80,11 +85,32 @@
                 style="@style/Widget.MaterialComponents.Chip.Filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Not programming your thermo"
+                android:text="Not programming thermo"
+                android:textColor="@color/colorPrimaryDark"
                 app:chipBackgroundColor="@color/bg_chip_state_list" />
 
         </com.google.android.material.chip.ChipGroup>
-
+        <TextView
+            android:id="@+id/textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="@string/dialog_title"
+            android:textStyle="bold"
+            android:textSize="20sp" />
+        <View
+            android:id="@+id/linea"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorAccent"
+            android:layout_below="@+id/textview"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="10dp"
+            />
 
         <LinearLayout
             android:visibility="invisible"
