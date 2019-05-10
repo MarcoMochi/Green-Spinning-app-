@@ -7,6 +7,10 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,13 +20,18 @@ import java.util.ArrayList;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
 
-    ArrayList personNames;
+    ArrayList dates;
+    ArrayList wattProduced;
+    ArrayList helperNames;
     Context context;
+    private static int currentPosition = -1;
+    private static int previousExpandedPosition = -1;
 
-    public CustomAdapter(Context context, ArrayList personNames) {
+    public CustomAdapter(Context context, ArrayList dates, ArrayList helperNames, ArrayList wattProduced) {
         this.context = context;
-        this.personNames = personNames;
-
+        this.dates = dates;
+        this.helperNames = helperNames;
+        this.wattProduced = wattProduced;
     }
 
     @Override
@@ -35,36 +44,56 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
 
         // set the data in items
-        holder.name.setText((CharSequence) personNames.get(position));
+        holder.date.setText((CharSequence) dates.get(position));
+        holder.wattProduced.setText((CharSequence) wattProduced.get(position));
+        holder.helper.setText((CharSequence) helperNames.get(position));
+        final boolean isExpanded = position== currentPosition;
+        Animation slideDown = AnimationUtils.loadAnimation(context, R.anim.slide_down);
+        holder.linearLayout.startAnimation(slideDown);
+        holder.linearLayout.setVisibility(isExpanded?View.VISIBLE:View.GONE);
+        holder.itemView.setActivated(isExpanded);
+
+
+        if (isExpanded)
+            previousExpandedPosition = position;
+
 // implement setOnClickListener event on item view.
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-// open another activity on item click
-                Intent intent = new Intent(context, Workout.class);
-                context.startActivity(intent); // start Intent
+                currentPosition = isExpanded ? -1:position;
+                notifyItemChanged(previousExpandedPosition);
+                notifyItemChanged(position);
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return personNames.size();
+        return dates.size();
     }
+
+
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         // init the item view's
-        TextView name;
+        TextView date;
+        TextView wattProduced;
+        TextView helper;
+        RelativeLayout linearLayout;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
 // get the reference of item view's
-            name = (TextView) itemView.findViewById(R.id.name);
+            date = (TextView) itemView.findViewById(R.id.date);
+            wattProduced = (TextView) itemView.findViewById(R.id.watt_produced);
+            helper = (TextView) itemView.findViewById(R.id.help_taken);
 
+            linearLayout = (RelativeLayout) itemView.findViewById(R.id.linear_layout);
         }
     }
 }

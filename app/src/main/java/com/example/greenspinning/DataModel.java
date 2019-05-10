@@ -2,33 +2,26 @@ package com.example.greenspinning;
 
 public class DataModel {
 
-    String name;
-    String type;
-    String version_number;
-    String feature;
+    String date;
+    String wattProduced;
+    String helperNames;
 
-    public DataModel(String name, String type, String version_number, String feature) {
-        this.name = name;
-        this.type = type;
-        this.version_number = version_number;
-        this.feature = feature;
-
+    public DataModel(String date, String wattProduced, String helperNames) {
+        this.date = date;
+        this.wattProduced = wattProduced;
+        this.helperNames = helperNames;
     }
 
-    public String getName() {
-        return name;
+    public String getDate() {
+        return date;
     }
 
-    public String getType() {
-        return type;
+    public String getWattProduced() {
+        return wattProduced;
     }
 
-    public String getVersion_number() {
-        return version_number;
-    }
-
-    public String getFeature() {
-        return feature;
+    public String getHelperNames() {
+        return helperNames;
     }
 
 }
