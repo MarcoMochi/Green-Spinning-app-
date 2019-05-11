@@ -35,6 +35,8 @@ public class HomeFragment extends Fragment {
     ArrayList speed = new ArrayList<>(Arrays.asList("18 Km/h", "16 Km/h", "15 Km/h", "17 Km/h", "18 Km/h", "17 Km/h", "15 Km/h", "20 Km/h", "14 Km/h", "13 Km/h", "15 Km/h", "14 Km/h", "18 Km/h", "15 Km/h"));
     ArrayList km = new ArrayList<>(Arrays.asList("19", "20", "22", "15", "34", "19", "15", "19", "18", "16", "17", "22", "20", "14"));
     ArrayList spinning_class = new ArrayList<>(Arrays.asList("Spinning Class #14", "Spinning Class #13", "Spinning Class #12", "Spinning Class #11", "Spinning Class #10", "Spinning Class #9", "Spinning Class #8", "Spinning Class #7", "Spinning Class #6", "Spinning Class #5", "Spinning Class #4", "Spinning Class #3", "Spinning Class #2", "Spinning Class #1"));
+    ArrayList icon_color = new ArrayList<>(Arrays.asList("GREEN", "GREEN", "WHITE", "RED", "GREEN", "RED", "RED", "GREEN", "WHITE", "RED", "GREEN", "WHITE", "WHITE", "RED"));
+    ArrayList icon_view = new ArrayList<>(Arrays.asList(true, false, false, true, true, false, true, false, false, false, true, false, true, true));
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -70,7 +72,7 @@ public class HomeFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(linearLayoutManager);
-        CustomAdapter customAdapter = new CustomAdapter(getActivity(), date, producedWatt, helpers, calories, speed, km, spinning_class);
+        CustomAdapter customAdapter = new CustomAdapter(getActivity(), date, producedWatt, helpers, calories, speed, km, spinning_class, icon_color, icon_view);
         recyclerView.setAdapter(customAdapter);
 
         return view;

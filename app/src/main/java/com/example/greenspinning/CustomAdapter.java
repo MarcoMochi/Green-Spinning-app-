@@ -1,19 +1,25 @@
 package com.example.greenspinning;
 
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 
-import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.LinearLayout;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -27,11 +33,13 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     ArrayList speed;
     ArrayList km;
     ArrayList spinning_class;
+    ArrayList icon_color;
+    ArrayList<Boolean> icon_view;
     Context context;
     private static int currentPosition = -1;
     private static int previousExpandedPosition = -1;
 
-    public CustomAdapter(Context context, ArrayList dates, ArrayList helperNames, ArrayList wattProduced, ArrayList calories, ArrayList speed, ArrayList km, ArrayList spinning_class) {
+    public CustomAdapter(Context context, ArrayList dates, ArrayList helperNames, ArrayList wattProduced, ArrayList calories, ArrayList speed, ArrayList km, ArrayList spinning_class, ArrayList icon_color, ArrayList icon_view) {
         this.context = context;
         this.dates = dates;
         this.helperNames = helperNames;
@@ -40,6 +48,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         this.speed = speed;
         this.km = km;
         this.spinning_class = spinning_class;
+        this.icon_color = icon_color;
+        this.icon_view = icon_view;
     }
 
     @Override
@@ -51,6 +61,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         return vh;
     }
 
+    @SuppressLint("ResourceAsColor")
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
 
@@ -62,6 +73,23 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         holder.speed.setText((CharSequence) speed.get(position));
         holder.km.setText((CharSequence) km.get(position));
         holder.spinning_class.setText((CharSequence) spinning_class.get(position));
+
+        // set icon color based on the array
+        if(icon_color.get(position).equals("GREEN")) {
+            DrawableCompat.setTint(holder.icon_color.getBackground(), ContextCompat.getColor(context, R.color.green));
+        } else if(icon_color.get(position).equals("RED")) {
+            DrawableCompat.setTint(holder.icon_color.getBackground(), ContextCompat.getColor(context, R.color.red));
+        } else {
+            DrawableCompat.setTint(holder.icon_color.getBackground(), ContextCompat.getColor(context, R.color.iron));
+        }
+
+        // set icon visibility based on the array
+        if(icon_view.get(position)) {
+            holder.icon_view.setVisibility(View.VISIBLE);
+        } else {
+            holder.icon_view.setVisibility(View.GONE);
+        }
+
         final boolean isExpanded = position== currentPosition;
         Animation slideDown = AnimationUtils.loadAnimation(context, R.anim.slide_down);
         holder.linearLayout.startAnimation(slideDown);
@@ -100,6 +128,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         TextView km;
         TextView spinning_class;
         RelativeLayout linearLayout;
+        ImageView icon_color;
+        ImageView icon_view;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -112,6 +142,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             speed = (TextView) itemView.findViewById(R.id.speed);
             km = (TextView) itemView.findViewById(R.id.km);
             spinning_class = (TextView) itemView.findViewById(R.id.spinning_class);
+            icon_color = (ImageView) itemView.findViewById(R.id.help_icon);
+            icon_view = (ImageView) itemView.findViewById(R.id.cup_icon);
 
             linearLayout = (RelativeLayout) itemView.findViewById(R.id.linear_layout);
         }
