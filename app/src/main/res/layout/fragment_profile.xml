@@ -13,7 +13,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="100dp"
         android:background="@drawable/profile_background"
         />
 
@@ -23,10 +23,10 @@
         android:id="@+id/profile_image"
         android:background="@drawable/profile_image_white"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginTop="50dp"/>
 
     <TextView
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="170dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Thomas Shelby"
@@ -37,7 +37,7 @@
         />
 
     <TextView
-        android:layout_marginTop="245dp"
+        android:layout_marginTop="195dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Beginner"
@@ -46,26 +46,16 @@
         android:textSize="18dp"
         />
 
-    <TextView
-        android:layout_marginTop="265dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Birmingham, United Kingdom"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/monsoon"
-        android:textSize="16dp"
-        />
-
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/colorPrimary"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="230dp"
         android:layout_marginHorizontal="30dp"
         />
 
     <TextView
-        android:layout_marginTop="310dp"
+        android:layout_marginTop="240dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Age"
@@ -75,7 +65,7 @@
         />
 
     <TextView
-        android:layout_marginTop="310dp"
+        android:layout_marginTop="240dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Weight"
@@ -85,7 +75,7 @@
         />
 
     <TextView
-        android:layout_marginTop="310dp"
+        android:layout_marginTop="240dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Height"
@@ -96,7 +86,7 @@
         />
 
     <TextView
-        android:layout_marginTop="335dp"
+        android:layout_marginTop="265dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="32"
@@ -106,7 +96,7 @@
         />
 
     <TextView
-        android:layout_marginTop="335dp"
+        android:layout_marginTop="265dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="74 KGs"
@@ -116,7 +106,7 @@
         />
 
     <TextView
-        android:layout_marginTop="335dp"
+        android:layout_marginTop="265dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="6'3''"
@@ -131,7 +121,7 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="125dp"
+        android:layout_marginTop="75dp"
         android:layout_marginRight="44dp"
         android:src="@drawable/plus"
         android:clickable="true" />
@@ -141,33 +131,37 @@
         android:layout_height="60dp"
         android:background="@drawable/fab_edit_button"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="122dp"
+        android:layout_marginTop="72dp"
         android:layout_marginLeft="44dp"
 
         />
 
     <View
+        android:id="@+id/view_profile"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/colorPrimary"
-        android:layout_marginTop="370dp"
+        android:layout_marginTop="300dp"
         android:layout_marginHorizontal="30dp"
         />
 
     <TextView
+        android:visibility="invisible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Teammates you helped (5)"
-        android:layout_marginTop="380dp"
+        android:layout_marginTop="310dp"
         android:layout_marginLeft="30dp"
         android:textColor="@color/monsoon"
         android:textStyle="bold"/>
 
     <ImageView
+        android:visibility="invisible"
+        android:id="@+id/image_helped"
         android:layout_width="100dp"
         android:layout_height="37dp"
         android:background="@drawable/helped_people"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="330dp"
         android:layout_marginLeft="30dp"/>
 
 
@@ -193,6 +187,14 @@
         android:layout_alignBottom="@+id/bad_habits1"
         android:layout_marginEnd="-173dp"
         android:layout_marginBottom="0dp" />
+
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/view_profile"
+        android:background="@drawable/profile_4buttons_dark1"
+        android:layout_marginTop="10dp"/>
 
 
 </RelativeLayout>
