@@ -20,7 +20,7 @@ public class DialogFragment extends AAH_FabulousFragment {
     }
     @Override
     public void setupDialog(Dialog dialog, int style) {
-        View contentView = View.inflate(getContext(), R.layout.filter_sample_view, null);
+        final View contentView = View.inflate(getContext(), R.layout.filter_sample_view, null);
 
         RelativeLayout rl_content = (RelativeLayout) contentView.findViewById(R.id.rl_content);
         LinearLayout ll_buttons = (LinearLayout) contentView.findViewById(R.id.ll_buttons);
@@ -28,8 +28,8 @@ public class DialogFragment extends AAH_FabulousFragment {
             @Override
             public void onClick(View v) {
                 closeFilter("closed");
-                //String message = "Lights on";
-                //sendResult(message);
+                String message = "Lights on";
+                sendResult(message);
             }
         });
         //params to set

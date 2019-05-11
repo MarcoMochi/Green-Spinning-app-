@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -27,6 +28,7 @@ public class ProfileFragment extends Fragment {
     private static final int TARGET_FRAGMENT_REQUEST_CODE = 1;
     private static final String BAD_HABITS1 = "message";
     TextView inputBadHabits1;
+    FloatingActionButton fab;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -63,7 +65,7 @@ public class ProfileFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_profile, container, false);
         inputBadHabits1 = v.findViewById(R.id.input_bad_habits1);
 
-        final FloatingActionButton fab = v.findViewById(R.id.floatingActionButton);
+        fab = v.findViewById(R.id.floatingActionButton);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,6 +86,7 @@ public class ProfileFragment extends Fragment {
         if( requestCode == TARGET_FRAGMENT_REQUEST_CODE ) {
             String greeting = data.getStringExtra(BAD_HABITS1);
             inputBadHabits1.setText(greeting);
+            fab.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.view));
         }
     }
 
