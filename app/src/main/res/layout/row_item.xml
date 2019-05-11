@@ -65,6 +65,17 @@
                 android:background="@drawable/help_icon"
                 android:backgroundTint="@color/red" />
 
+            <ImageView
+                android:id="@+id/cup_icon"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/cup_icon"
+                android:backgroundTint="@color/green" />
+
             <ImageButton
                 android:layout_width="20dp"
                 android:layout_height="20dp"
@@ -78,7 +89,7 @@
             <RelativeLayout android:id="@+id/linear_layout"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-
+                android:visibility="gone"
                 android:animateLayoutChanges="true"
                 android:orientation="vertical"
                 xmlns:android="http://schemas.android.com/apk/res/android">
