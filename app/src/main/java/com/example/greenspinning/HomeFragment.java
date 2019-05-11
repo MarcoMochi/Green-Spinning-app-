@@ -29,9 +29,12 @@ public class HomeFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     ArrayList date = new ArrayList<>(Arrays.asList("03/07/19", "01/07/19", "28/06/19", "26/06/19", "24/06/19", "21/06/19", "19/06/19", "17/06/19", "14/06/19", "12/06/19", "10/06/19", "07/06/19", "05/06/19", "03/06/19"));
-    ArrayList producedWatt = new ArrayList<>(Arrays.asList("120", "80", "200", "150", "75", "175", "215", "90", "90", "130", "175", "100", "200", "80"));
-    ArrayList helpers = new ArrayList<>(Arrays.asList("Jonathan Body", "Chandra Mosbey", "Randee Kovacich", "Hobert Lombard", "Wallace Tompson", "Lauran Vue", "Tawna Stelter", "Shawana Teal", "Lula Lares", "Joelle Mefford", "Antonia Cahall", "Harris Burtch", "Linn Nixon", "Eddie Bernhard"));
-
+    ArrayList producedWatt = new ArrayList<>(Arrays.asList("Jonathan Body", "Chandra Mosbey", "Randee Kovacich", "Hobert Lombard", "Wallace Tompson", "Lauran Vue", "Tawna Stelter", "Shawana Teal", "Lula Lares", "Joelle Mefford", "Antonia Cahall", "Harris Burtch", "Linn Nixon", "Eddie Bernhard"));
+    ArrayList helpers = new ArrayList<>(Arrays.asList("120", "80", "200", "150", "75", "175", "215", "90", "90", "130", "175", "100", "200", "80"));
+    ArrayList calories = new ArrayList<>(Arrays.asList("820", "830", "790", "800", "1020", "998", "735", "956", "822", "930", "1075", "770", "802", "810"));
+    ArrayList speed = new ArrayList<>(Arrays.asList("18 Km/h", "16 Km/h", "15 Km/h", "17 Km/h", "18 Km/h", "17 Km/h", "15 Km/h", "20 Km/h", "14 Km/h", "13 Km/h", "15 Km/h", "14 Km/h", "18 Km/h", "15 Km/h"));
+    ArrayList km = new ArrayList<>(Arrays.asList("19", "20", "22", "15", "34", "19", "15", "19", "18", "16", "17", "22", "20", "14"));
+    ArrayList spinning_class = new ArrayList<>(Arrays.asList("Spinning Class #14", "Spinning Class #13", "Spinning Class #12", "Spinning Class #11", "Spinning Class #10", "Spinning Class #9", "Spinning Class #8", "Spinning Class #7", "Spinning Class #6", "Spinning Class #5", "Spinning Class #4", "Spinning Class #3", "Spinning Class #2", "Spinning Class #1"));
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -67,7 +70,7 @@ public class HomeFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(linearLayoutManager);
-        CustomAdapter customAdapter = new CustomAdapter(getActivity(), date, producedWatt, helpers);
+        CustomAdapter customAdapter = new CustomAdapter(getActivity(), date, producedWatt, helpers, calories, speed, km, spinning_class);
         recyclerView.setAdapter(customAdapter);
 
         return view;

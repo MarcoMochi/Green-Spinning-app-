@@ -23,15 +23,23 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     ArrayList dates;
     ArrayList wattProduced;
     ArrayList helperNames;
+    ArrayList calories;
+    ArrayList speed;
+    ArrayList km;
+    ArrayList spinning_class;
     Context context;
     private static int currentPosition = -1;
     private static int previousExpandedPosition = -1;
 
-    public CustomAdapter(Context context, ArrayList dates, ArrayList helperNames, ArrayList wattProduced) {
+    public CustomAdapter(Context context, ArrayList dates, ArrayList helperNames, ArrayList wattProduced, ArrayList calories, ArrayList speed, ArrayList km, ArrayList spinning_class) {
         this.context = context;
         this.dates = dates;
         this.helperNames = helperNames;
         this.wattProduced = wattProduced;
+        this.calories = calories;
+        this.speed = speed;
+        this.km = km;
+        this.spinning_class = spinning_class;
     }
 
     @Override
@@ -50,6 +58,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         holder.date.setText((CharSequence) dates.get(position));
         holder.wattProduced.setText((CharSequence) wattProduced.get(position));
         holder.helper.setText((CharSequence) helperNames.get(position));
+        holder.calories.setText((CharSequence) calories.get(position));
+        holder.speed.setText((CharSequence) speed.get(position));
+        holder.km.setText((CharSequence) km.get(position));
+        holder.spinning_class.setText((CharSequence) spinning_class.get(position));
         final boolean isExpanded = position== currentPosition;
         Animation slideDown = AnimationUtils.loadAnimation(context, R.anim.slide_down);
         holder.linearLayout.startAnimation(slideDown);
@@ -83,6 +95,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         TextView date;
         TextView wattProduced;
         TextView helper;
+        TextView calories;
+        TextView speed;
+        TextView km;
+        TextView spinning_class;
         RelativeLayout linearLayout;
 
         public MyViewHolder(View itemView) {
@@ -92,6 +108,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             date = (TextView) itemView.findViewById(R.id.date);
             wattProduced = (TextView) itemView.findViewById(R.id.watt_produced);
             helper = (TextView) itemView.findViewById(R.id.help_taken);
+            calories = (TextView) itemView.findViewById(R.id.calories);
+            speed = (TextView) itemView.findViewById(R.id.speed);
+            km = (TextView) itemView.findViewById(R.id.km);
+            spinning_class = (TextView) itemView.findViewById(R.id.spinning_class);
 
             linearLayout = (RelativeLayout) itemView.findViewById(R.id.linear_layout);
         }

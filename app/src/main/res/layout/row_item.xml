@@ -1,145 +1,222 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        card_view:cardElevation="20dp"
-        android:layout_marginHorizontal="6dp"
-        android:layout_marginTop="10dp"
-        card_view:cardCornerRadius="4dp"
-        android:clipChildren="true"
-        android:clipToPadding="true"
-        style="@style/Theme.MaterialComponents"
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:backgroundTint="#1C2126"
-        >
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardElevation="20dp"
+    android:layout_marginHorizontal="6dp"
+    android:layout_marginTop="10dp"
+    card_view:cardCornerRadius="4dp"
+    android:clipChildren="true"
+    android:clipToPadding="true"
+    style="@style/Theme.MaterialComponents"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="#1C2126">
 
-        <LinearLayout
-                android:id="@+id/relative_layout"
-                android:layout_width="match_parent"
+    <LinearLayout
+            android:id="@+id/relative_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="60dp"
+                android:layout_height="38dp"
+                android:src="@drawable/logo"
+                />
+
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="vertical"
-                android:padding="10dp">
+                android:layout_below="@+id/image"
+                android:layout_marginTop="9dp"
+                android:linksClickable="true"
+                android:text="22/02/19"
+                android:textColor="@color/colorAccent"
+                android:textSize="15dp" />
 
-            <RelativeLayout
+            <TextView
+                android:id="@+id/spinning_class"
+                android:layout_width="158dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="118dp"
+                android:layout_toEndOf="@+id/image"
+                android:textColor="@color/iron"
+                android:text="Spinning Class" />
+
+            <ImageView
+                android:id="@+id/help_icon"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:background="@drawable/help_icon"
+                android:backgroundTint="@color/red" />
+
+            <ImageButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignBottom="@+id/date"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/show_more_button"
+                android:backgroundTint="@color/iron"
+                android:clickable="true" />
+            <RelativeLayout android:id="@+id/linear_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:id="@+id/image"
-                    android:layout_width="60dp"
-                    android:layout_height="38dp"
-                    android:src="@drawable/logo"
-                    />
+                android:layout_height="200dp"
 
+                android:animateLayoutChanges="true"
+                android:orientation="vertical"
+                xmlns:android="http://schemas.android.com/apk/res/android">
 
-                <TextView
-                    android:id="@+id/date"
+                <TableLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/image"
-                    android:layout_marginTop="9dp"
-                    android:linksClickable="true"
-                    android:text="22/02/19"
-                    android:textColor="@color/iron"
-                    android:textSize="15dp" />
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="1dp">
 
-                <TextView
-                    android:layout_width="158dp"
-                    android:layout_height="40dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginEnd="118dp"
-                    android:layout_toEndOf="@+id/image"
-                    android:textColor="@color/iron"
-                    android:text="Spinning Class" />
+                    <TableRow>
 
-                <ImageView
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginEnd="0dp"
-                    android:background="@drawable/help_icon"
-                    android:backgroundTint="@color/red" />
+                        <TextView
+                            android:id="@+id/watt_text"
+                            android:layout_width="137dp"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@+id/help_text"
+                            android:layout_marginEnd="24dp"
+                            android:layout_marginBottom="6dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_toStartOf="@+id/watt_produced"
+                            android:text="Watt produced: "
+                            android:textColor="@color/white" />
 
-                <ImageButton
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_alignBottom="@+id/date"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="0dp"
-                    android:layout_marginBottom="0dp"
-                    android:background="@drawable/show_more_button"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:clickable="true" />
-                <RelativeLayout android:id="@+id/linear_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:visibility="gone"
-                    android:animateLayoutChanges="true"
-                    android:orientation="vertical"
-                    xmlns:android="http://schemas.android.com/apk/res/android">
+                        <TextView
+                            android:id="@+id/watt_produced"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="185dp"
+                            android:layout_marginBottom="6dp"
+                            android:text="156/170"
+                            android:textColor="@color/white" />
+                    </TableRow>
 
-                    <TableLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="1dp">
+                    <TableRow>
 
-                        <TableRow>
+                        <TextView
+                            android:id="@+id/calories_text"
+                            android:layout_width="139dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="24dp"
+                            android:layout_marginBottom="6dp"
+                            android:layout_toStartOf="@+id/watt_produced"
+                            android:text="Calories burned: "
+                            android:textColor="@color/white" />
 
-                            <TextView
-                                android:id="@+id/watt_text"
-                                android:layout_width="137dp"
-                                android:layout_height="wrap_content"
-                                android:layout_above="@+id/help_text"
-                                android:layout_marginEnd="24dp"
-                                android:layout_marginBottom="6dp"
-                                android:layout_toStartOf="@+id/watt_produced"
-                                android:text="Watt produced: "
-                                android:textColor="@color/white" />
+                        <TextView
+                            android:id="@+id/calories"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="-27dp"
+                            android:layout_marginBottom="6dp"
+                            android:layout_toStartOf="@+id/watt_produced"
+                            android:text="893"
+                            android:textColor="@color/white" />
+                    </TableRow>
 
-                            <TextView
-                                android:id="@+id/watt_produced"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_alignParentBottom="true"
-                                android:layout_marginEnd="185dp"
-                                android:layout_marginBottom="6dp"
-                                android:text="watt"
-                                android:textColor="@color/white" />
-                        </TableRow>
+                    <TableRow>
 
-                        <TableRow>
+                        <TextView
+                            android:id="@+id/speed_text"
+                            android:layout_width="139dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="24dp"
+                            android:layout_marginBottom="6dp"
+                            android:layout_toStartOf="@+id/watt_produced"
+                            android:text="Average speed: "
+                            android:textColor="@color/white" />
 
-                            <TextView
-                                android:id="@+id/help_text"
-                                android:layout_width="139dp"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentBottom="true"
-                                android:layout_marginEnd="24dp"
-                                android:layout_marginBottom="6dp"
-                                android:layout_toStartOf="@+id/watt_produced"
-                                android:text="Help received: "
-                                android:textColor="@color/white" />
+                        <TextView
+                            android:id="@+id/speed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="-27dp"
+                            android:layout_marginBottom="6dp"
+                            android:layout_toStartOf="@+id/watt_produced"
+                            android:text="14 Km/h"
+                            android:textColor="@color/white" />
+                    </TableRow>
 
-                            <TextView
-                                android:id="@+id/help_taken"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentBottom="true"
-                                android:layout_marginEnd="-27dp"
-                                android:layout_marginBottom="29dp"
-                                android:layout_toStartOf="@+id/watt_produced"
-                                android:text="help"
-                                android:textColor="@color/white" />
-                        </TableRow>
-                    </TableLayout>
-                </RelativeLayout>
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/km_text"
+                            android:layout_width="139dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="24dp"
+                            android:layout_marginBottom="6dp"
+                            android:layout_toStartOf="@+id/watt_produced"
+                            android:text="Total Km: "
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/km"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="-27dp"
+                            android:layout_marginBottom="6dp"
+                            android:layout_toStartOf="@+id/watt_produced"
+                            android:text="22"
+                            android:textColor="@color/white" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/help_text"
+                            android:layout_width="139dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="24dp"
+                            android:layout_marginBottom="6dp"
+                            android:layout_toStartOf="@+id/watt_produced"
+                            android:text="Help received by: "
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/help_taken"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="-27dp"
+                            android:layout_marginBottom="6dp"
+                            android:layout_toStartOf="@+id/watt_produced"
+                            android:text="John McKenzie"
+                            android:textColor="@color/white" />
+                    </TableRow>
+                </TableLayout>
             </RelativeLayout>
-        </LinearLayout>
-
-    </com.google.android.material.card.MaterialCardView>
+         </RelativeLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
