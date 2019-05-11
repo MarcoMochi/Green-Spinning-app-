@@ -80,7 +80,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
 
                 Intent intent = new Intent(context,DetailsActivity.class);
                 intent.putExtra("title", news.getTitle());
-                intent.putExtra("subtitle", news.getSubtitle());
+                intent.putExtra("text", news.getText());
                 intent.putExtra("thumbnail", news.getThumbnail());
                 context.startActivity(intent,bundle);
             }

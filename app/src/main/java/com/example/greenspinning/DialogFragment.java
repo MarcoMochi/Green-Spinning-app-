@@ -27,9 +27,9 @@ public class DialogFragment extends AAH_FabulousFragment {
         contentView.findViewById(R.id.btn_close).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String message = "Lights on";
-                sendResult(message);
                 closeFilter("closed");
+                //String message = "Lights on";
+                //sendResult(message);
             }
         });
         //params to set

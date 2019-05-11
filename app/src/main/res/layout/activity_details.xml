@@ -19,7 +19,7 @@
         <RelativeLayout
             android:id="@+id/rel_layout"
             android:layout_width="match_parent"
-            android:layout_height="627dp">
+            android:layout_height="581dp">
 
             <ImageView
                 android:id="@+id/cover_bg_details"
@@ -40,26 +40,26 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="205dp"
-                android:textAlignment="center"
                 android:singleLine="true"
                 android:text="Green Energy"
+                android:textAlignment="center"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#ffffff"
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/subtitle_details"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="317dp"
                 android:layout_below="@+id/cover_bg_details"
-                android:layout_alignParentBottom="true"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="14dp"
-                android:layout_marginBottom="221dp"
-                android:paddingRight="10dp"
+                android:layout_marginTop="5dp"
+                android:paddingRight="0dp"
+                android:scrollbars="vertical"
                 android:text="&quot;While exploring the uncharted wilderness in 1823, frontiersman Hugh Glass (Leonardo DiCaprio) sustains life-threatening injuries from a brutal bear attack."
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textSize="12sp" />
+                android:textColor="@color/black"
+                android:textSize="13sp" />
 
 
         </RelativeLayout>

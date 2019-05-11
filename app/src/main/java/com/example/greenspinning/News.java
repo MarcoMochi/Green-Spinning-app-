@@ -3,14 +3,16 @@ package com.example.greenspinning;
 public class News {
     private String title;
     private String subtitle;
+    private String text;
     private int thumbnail;
 
     public News() {
     }
 
-    public News(String title, String subtitle, int thumbnail) {
+    public News(String title, String subtitle, String text, int thumbnail) {
         this.title = title;
         this.subtitle = subtitle;
+        this.text = text;
         this.thumbnail = thumbnail;
     }
 
@@ -28,6 +30,14 @@ public class News {
 
     public void setsubtitle(String subtitle) {
         this.subtitle = subtitle;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText (String text) {
+        this.text = text;
     }
 
     public int getThumbnail() {

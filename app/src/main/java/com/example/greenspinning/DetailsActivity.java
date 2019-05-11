@@ -8,6 +8,8 @@ import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
@@ -26,10 +28,11 @@ public class DetailsActivity extends AppCompatActivity {
         CardView cardView = (CardView) findViewById(R.id.card_view);
         TextView title = (TextView) findViewById(R.id.title_details);
         ImageView movie_bg = (ImageView) findViewById(R.id.cover_bg_details);
-        TextView subtitle = (TextView) findViewById(R.id.subtitle_details);
+        TextView text = (TextView) findViewById(R.id.text);
+        text.setMovementMethod(new ScrollingMovementMethod());
 
         Glide.with(this).load(intent.getIntExtra("thumbnail", 1)).into(movie_bg);
         title.setText(intent.getStringExtra("title"));
-        subtitle.setText(intent.getStringExtra("subtitle"));
+        text.setText(intent.getStringExtra("text"));
     }
 }
