@@ -30,12 +30,16 @@
             android:textColorHint="@color/white"
             app:boxStrokeColor="@color/colorPrimary"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-            <com.google.android.material.textfield.TextInputEditText android:id="@+id/input_email"
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/AvenirNext-Medium"
+                android:textColor="@color/white"
+                android:hint="Email"
                 android:inputType="textEmailAddress"
-                tools:override="true"
-                android:hint="Email" />
+                tools:override="true" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Password Label -->
@@ -50,6 +54,8 @@
             <com.google.android.material.textfield.TextInputEditText android:id="@+id/input_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/AvenirNext-Medium"
+                android:textColor="@color/white"
                 android:inputType="textPassword"
                 android:hint="Password"/>
         </com.google.android.material.textfield.TextInputLayout>
