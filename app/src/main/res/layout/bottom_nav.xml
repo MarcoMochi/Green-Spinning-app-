@@ -13,6 +13,6 @@
         android:layout_alignParentBottom="true"
         app:itemIconTint="@color/bnv_tab"
         app:itemTextColor="@color/bnv_tab"
-        app:menu="@menu/bottom_navigation_main" />
+        app:menu="@menu/bottom_navigation_main"/>
 
 </RelativeLayout>

@@ -8,10 +8,13 @@
 
     <color name="black">#000000</color>
     <color name="green">#82D652</color>
-    <color name="darkGrey">#2C3441</color>
+    <color name="star">#E5D013</color>
+    <color name="darkGrey">#1C2126</color>
     <color name="red">#D65F5E</color>
     <color name="jet">#222222</color>
     <color name="oil">#333333</color>
+    <color name="grey">#F2F1F3</color>
+
     <color name="monsoon">#777777</color>
     <color name="jumbo">#888888</color>
     <color name="aluminum">#999999</color>

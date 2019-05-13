@@ -32,7 +32,7 @@
         android:text="Thomas Shelby"
         android:textStyle="bold"
        android:layout_centerHorizontal="true"
-        android:textColor="@color/black"
+        android:textColor="@color/darkGrey"
         android:textSize="20dp"
         android:fontFamily="@font/avenir_next_demi"
         />
@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:text="Beginner"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/black"
+        android:textColor="@color/darkGrey"
         android:textSize="18dp"
         android:fontFamily="@font/avenir_next_demi"
         />
@@ -51,7 +51,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorAccent"
         android:layout_marginTop="230dp"
         android:layout_marginHorizontal="30dp"
         />
@@ -63,7 +63,7 @@
         android:fontFamily="@font/avenir_next_demi"
         android:text="Age"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/black"
+        android:textColor="@color/darkGrey"
         android:textSize="18dp"
         />
 
@@ -74,7 +74,7 @@
         android:fontFamily="@font/avenir_next_demi"
         android:text="Weight"
         android:layout_marginLeft="50dp"
-        android:textColor="@color/black"
+        android:textColor="@color/darkGrey"
         android:textSize="18dp"
         />
 
@@ -86,7 +86,7 @@
         android:text="Height"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="50dp"
-        android:textColor="@color/black"
+        android:textColor="@color/darkGrey"
         android:textSize="18dp"
         />
 
@@ -129,7 +129,7 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="68dp"
         android:layout_marginRight="44dp"
         android:src="@drawable/plus"
         android:clickable="true" />
@@ -139,7 +139,7 @@
         android:layout_height="60dp"
         android:background="@drawable/fab_edit_button"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="65dp"
         android:layout_marginLeft="44dp"
 
         />
@@ -148,7 +148,7 @@
         android:id="@+id/view_profile"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorAccent"
         android:layout_marginTop="300dp"
         android:layout_marginHorizontal="30dp"
         />
@@ -203,7 +203,7 @@
         android:layout_centerVertical="true"
         android:layout_marginTop="47dp"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/profile_4buttons" />
+        android:background="@drawable/profile_4buttons_shadow" />
 
 
 </RelativeLayout>

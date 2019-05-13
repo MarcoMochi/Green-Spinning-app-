@@ -40,9 +40,7 @@
                 android:fontFamily="@font/avenir_next_demi"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
-
-                android:textColor="@color/white"
-                tools:override="true" />
+                android:textColor="@color/white"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Password Label -->
