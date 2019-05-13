@@ -24,6 +24,7 @@
             android:background="@drawable/buttons"
             android:backgroundTint="@color/colorAccent"
             android:layout_below="@+id/dialog_chip_group"
+            android:fontFamily="@font/avenir_next_demi"
             android:text="CONFIRM" />
 
 
@@ -33,6 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:fontFamily="@font/avenir_next_demi"
             app:singleSelection="false">
 
             <com.google.android.material.chip.Chip
@@ -41,6 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Leaving lights on uselessly"
+                android:fontFamily="@font/avenir_next_demi"
                 android:textColor="@color/colorPrimaryDark"
                 app:chipBackgroundColor="@color/bg_chip_state_list" />
 
@@ -50,6 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Using incandescent bulb"
+                android:fontFamily="@font/avenir_next_demi"
                 android:textColor="@color/colorPrimaryDark"
                 app:chipBackgroundColor="@color/bg_chip_state_list" />
 
@@ -59,6 +63,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Leaving charger plugged in"
+                android:fontFamily="@font/avenir_next_demi"
                 android:textColor="@color/colorPrimaryDark"
                 app:chipBackgroundColor="@color/bg_chip_state_list" />
 
@@ -68,6 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Falling asleep with TV on"
+                android:fontFamily="@font/avenir_next_demi"
                 android:textColor="@color/colorPrimaryDark"
                 app:chipBackgroundColor="@color/bg_chip_state_list" />
 
@@ -77,6 +83,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Leaving PC on all day"
+                android:fontFamily="@font/avenir_next_demi"
                 android:textColor="@color/colorPrimaryDark"
                 app:chipBackgroundColor="@color/bg_chip_state_list" />
 
@@ -86,6 +93,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Not programming thermo"
+                android:fontFamily="@font/avenir_next_demi"
                 android:textColor="@color/colorPrimaryDark"
                 app:chipBackgroundColor="@color/bg_chip_state_list" />
 
@@ -100,6 +108,7 @@
             android:gravity="center"
             android:textColor="@color/white"
             android:text="@string/dialog_title"
+            android:fontFamily="@font/avenir_next_demi"
             android:textStyle="bold"
             android:textSize="20sp" />
         <View

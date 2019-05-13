@@ -35,6 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="180dp"
                 android:layout_marginLeft="16dp"
+                android:fontFamily="@font/avenir_next_demi"
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
@@ -46,6 +47,7 @@
                 android:layout_alignTop="@+id/thumbnail"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="205dp"
+                android:fontFamily="@font/avenir_next_demi"
                 android:textColor="@color/white" />
 
         </RelativeLayout>

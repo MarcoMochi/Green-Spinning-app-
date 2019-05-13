@@ -14,7 +14,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:background="@drawable/profile_background"
+        android:background="@drawable/profile_background_accent"
         />
 
     <ImageView
@@ -34,6 +34,7 @@
        android:layout_centerHorizontal="true"
         android:textColor="@color/black"
         android:textSize="20dp"
+        android:fontFamily="@font/avenir_next_demi"
         />
 
     <TextView
@@ -44,6 +45,7 @@
         android:layout_centerHorizontal="true"
         android:textColor="@color/black"
         android:textSize="18dp"
+        android:fontFamily="@font/avenir_next_demi"
         />
 
     <View
@@ -58,6 +60,7 @@
         android:layout_marginTop="240dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/avenir_next_demi"
         android:text="Age"
         android:layout_centerHorizontal="true"
         android:textColor="@color/black"
@@ -68,6 +71,7 @@
         android:layout_marginTop="240dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/avenir_next_demi"
         android:text="Weight"
         android:layout_marginLeft="50dp"
         android:textColor="@color/black"
@@ -78,6 +82,7 @@
         android:layout_marginTop="240dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/avenir_next_demi"
         android:text="Height"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="50dp"
@@ -89,6 +94,7 @@
         android:layout_marginTop="265dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/avenir_next_demi"
         android:text="32"
         android:layout_centerHorizontal="true"
         android:textColor="@color/monsoon"
@@ -99,6 +105,7 @@
         android:layout_marginTop="265dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/avenir_next_demi"
         android:text="74 KGs"
         android:layout_marginLeft="50dp"
         android:textColor="@color/monsoon"
@@ -109,6 +116,7 @@
         android:layout_marginTop="265dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/avenir_next_demi"
         android:text="6'3''"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="57dp"
@@ -195,7 +203,7 @@
         android:layout_centerVertical="true"
         android:layout_marginTop="47dp"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/profile_4buttons_dark1" />
+        android:background="@drawable/profile_4buttons" />
 
 
 </RelativeLayout>

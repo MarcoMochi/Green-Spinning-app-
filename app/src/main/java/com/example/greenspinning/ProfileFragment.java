@@ -86,7 +86,7 @@ public class ProfileFragment extends Fragment {
         if( requestCode == TARGET_FRAGMENT_REQUEST_CODE ) {
             String greeting = data.getStringExtra(BAD_HABITS1);
             inputBadHabits1.setText(greeting);
-            fab.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.view));
+            fab.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.eye_profile));
         }
     }
 
