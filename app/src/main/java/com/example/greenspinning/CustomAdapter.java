@@ -68,19 +68,21 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         // set the data in items
         holder.date.setText((CharSequence) dates.get(position));
         holder.wattProduced.setText((CharSequence) wattProduced.get(position));
-        holder.helper.setText((CharSequence) helperNames.get(position));
         holder.calories.setText((CharSequence) calories.get(position));
         holder.speed.setText((CharSequence) speed.get(position));
         holder.km.setText((CharSequence) km.get(position));
         holder.spinning_class.setText((CharSequence) spinning_class.get(position));
+        holder.helper.setText((CharSequence) helperNames.get(position));
 
         // set icon color based on the array
         if(icon_color.get(position).equals("GREEN")) {
+            holder.help.setText("help given to:");
             DrawableCompat.setTint(holder.icon_color.getBackground(), ContextCompat.getColor(context, R.color.green));
         } else if(icon_color.get(position).equals("RED")) {
             DrawableCompat.setTint(holder.icon_color.getBackground(), ContextCompat.getColor(context, R.color.red));
         } else {
             DrawableCompat.setTint(holder.icon_color.getBackground(), ContextCompat.getColor(context, R.color.iron));
+            holder.helper.setText("--");
         }
 
         // set icon visibility based on the array
@@ -126,6 +128,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         TextView calories;
         TextView speed;
         TextView km;
+        TextView help;
         TextView spinning_class;
         RelativeLayout linearLayout;
         ImageView icon_color;
@@ -141,6 +144,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             calories = (TextView) itemView.findViewById(R.id.calories);
             speed = (TextView) itemView.findViewById(R.id.speed);
             km = (TextView) itemView.findViewById(R.id.km);
+            help = (TextView) itemView.findViewById(R.id.help_text);
             spinning_class = (TextView) itemView.findViewById(R.id.spinning_class);
             icon_color = (ImageView) itemView.findViewById(R.id.help_icon);
             icon_view = (ImageView) itemView.findViewById(R.id.cup_icon);
